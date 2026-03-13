@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Search, CheckCircle } from "lucide-react";
 import { defaultContent } from "@/lib/content";
-import { useState, useMemo } from "react";
+import {  useMemo } from "react";
 
 interface FilterModalProps {
     isOpen: boolean;

@@ -35,7 +35,7 @@ export default function BlogSection() {
                             className="group bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row h-full transition-all hover:shadow-xl hover:border-accent/30"
                         >
                             <div className="relative w-full md:w-2/5 h-64 md:h-auto overflow-hidden">
-                                <img
+                                <Image
                                     src={post.image}
                                     alt={post.title}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"

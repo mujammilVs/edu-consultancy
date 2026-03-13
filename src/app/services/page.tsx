@@ -10,7 +10,7 @@ import {
     Compass,
     CheckCircle,
 } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
 import { defaultContent } from "@/lib/content";
 import { useScrollAnimation } from "@/hooks/useAnimations";
 import CTASection from "@/components/CTASection";
@@ -58,7 +58,7 @@ const visaProcess = [
 ];
 
 export default function ServicesPage() {
-    const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0);
+    // const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation(0);
     const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
     const { ref: processRef, isVisible: processVisible } = useScrollAnimation();
     const { ref: visaRef, isVisible: visaVisible } = useScrollAnimation();
