@@ -1,7 +1,9 @@
+export const runtime = "nodejs";
 import { NextResponse } from "next/server";
+
 import dbConnect from "@/lib/mongodb";
 import Content from "@/models/Content";
-import pdf from "pdf-parse";
+import * as pdf from "pdf-parse";
 // Note: If you encounter "pdf is not a function", change to: 
 // import * as pdf from "pdf-parse";
 import { defaultContent } from "@/lib/content";
@@ -15,10 +17,9 @@ export async function POST(req: Request) {
             return NextResponse.json({ success: false, message: "No file uploaded" }, { status: 400 });
         }
 
-        const buffer = Buffer.from(await file.arrayBuffer());
-        const data = await pdf(buffer);
-        const text = data.text;
-
+   const buffer = Buffer.from(await file.arrayBuffer());
+const data = await pdf.default(buffer);
+const text = data.text;
         // Brain of the system: Extract structured data from raw PDF text
         // In a real app, we'd pass this 'text' to Gemini/OpenAI for reliable extraction.
         // For this build, we'll implement a heuristic-based extraction.
